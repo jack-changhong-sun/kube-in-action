@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubia02
+  namespace: xinyun-namespace
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kubia02
+  template:
+    metadata:
+      labels:
+        app: kubia02
+        creation_method: manual
+        env: prod
+    spec:
+      containers:
+      - name: kubia02-container
+        image: registry.cn-shanghai.aliyuncs.com/sunchanghong/kubia:1.2 
+        ports:
+        - containerPort: 8088
+

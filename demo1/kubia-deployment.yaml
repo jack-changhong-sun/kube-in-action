@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubia-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kubia-server
+  template:
+    metadata:
+      labels:
+        app: kubia-server
+    spec:
+      containers:
+      - name: kubia-container
+        image: registry-vpc.cn-shanghai.aliyuncs.com/sunchanghong/kubia:1.1 
+        ports:
+        - containerPort: 8080
+

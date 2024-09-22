@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: kubia-single
+spec:
+  nodeSelector:
+    gpu: "true" 
+  containers:
+  - name: kubia02-container
+    image: registry.cn-shanghai.aliyuncs.com/sunchanghong/kubia:1.2 
