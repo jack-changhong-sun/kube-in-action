@@ -11,7 +11,7 @@ const handler = (request, response) => {
   console.log(`Received request from ${request.connection.remoteAddress}`);
   requestCount++;
   if(requestCount > 30){
-    request.writeHead(500);
+    response.writeHead(500);
     response.end("I'm not well. Please restart me!");
     return;
   }
