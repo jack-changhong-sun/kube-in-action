@@ -5,13 +5,14 @@ metadata:
   labels:
     app: kubia-probe
 spec:
-    containers:
-    - name: kubia-probe-container
-      image: registry.cn-shanghai.aliyuncs.com/sunchanghong/kubia:1.5
-      livenessProbe:
-        httpGet:
-          path: /
-          port: 8080
-      ports:
-        - containerPort: 8080
+  containers:
+  - name: kubia-probe-container
+    image: registry.cn-shanghai.aliyuncs.com/sunchanghong/kubia:1.5
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 8080
+      initialDelaySeconds: 15
+    ports:
+      - containerPort: 8080
 
